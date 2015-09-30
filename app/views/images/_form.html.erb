@@ -1,0 +1,36 @@
+  <%= form_for(@image) do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render 'form' %>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :caption %><br>
+    <%= f.text :caption %>
+  </div>
+
+<!--   <div class="field">
+    <%# direct_upload_form_for @uploader do |f| %>
+      <%# f.file_field :avatar %>
+      <%# f.submit %>
+    <%#end %>
+  </div> -->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
