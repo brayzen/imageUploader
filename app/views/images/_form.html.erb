@@ -14,8 +14,10 @@
   <%= render 'form' %>
 
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+    <%= f.direct_upload_form_for @uploader do |f| %>
+      <%= f.label :image %><br>
+      <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+    <%= f.submit %>
   </div>
 
   <div class="field">

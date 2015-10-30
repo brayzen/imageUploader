@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 gem 'carrierwave_direct'
+gem 'uuidtools'
 gem 'fog'
 gem "mini_magick"
 gem 'dotenv-rails'
